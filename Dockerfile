@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:centos7
 
 # 将JDK压缩包复制到镜像中
 RUN cat /etc/resolv.conf && yum update -y && yum -y install kde-l10n-Chinese \
