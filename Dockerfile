@@ -1,7 +1,9 @@
 FROM centos:centos7
 
 # 将JDK压缩包复制到镜像中
-RUN cat /etc/resolv.conf && yum update -y && yum -y install kde-l10n-Chinese \
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo && curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo \ 
+        && yum clean all && yum makecache \
+        && yum update -y && yum -y install kde-l10n-Chinese \
         && yum -y reinstall glibc-common \
         && localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 \
         && echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
