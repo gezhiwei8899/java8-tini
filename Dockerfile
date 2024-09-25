@@ -7,7 +7,7 @@ RUN yum update -y && yum -y install kde-l10n-Chinese \
         && echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
         && source /etc/locale.conf \
         && yum clean all && \
-    curl -SL "https://github.com/gezhiwei8899/java8-tini/releases/download/24.0.1/jdk-8u411-linux-x64.tar.gz" -o /tmp/jdk-8u381-linux-x64.tar.gz && \
+    curl -SL "https://github.com/gezhiwei8899/java8-tini/releases/download/24.0.1/jdk-8u411-linux-x64.tar.gz" -o /tmp/jdk-8u411-linux-x64.tar.gz && \
     mkdir -p /usr/lib/jvm && \
     tar -xf /tmp/jdk-8u411-linux-x64.tar.gz -C /usr/lib/jvm && \
     rm /tmp/jdk-8u411-linux-x64.tar.gz && \
