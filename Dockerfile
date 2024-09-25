@@ -1,7 +1,7 @@
 FROM centos:7
 
 # 将JDK压缩包复制到镜像中
-RUN yum update -y && yum -y install kde-l10n-Chinese \
+RUN cat /etc/resolv.conf && yum update -y && yum -y install kde-l10n-Chinese \
         && yum -y reinstall glibc-common \
         && localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 \
         && echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
